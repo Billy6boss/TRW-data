@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>台灣鐵路各站每月每站進出人數</title>
+	<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+	<script>
+		const data_url = "json/StationIncomeTotail.json"
+
+		var data = loadJSON(data_url);
+
+		$(data).ready(function () {
+			console.log(data);
+		})
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
