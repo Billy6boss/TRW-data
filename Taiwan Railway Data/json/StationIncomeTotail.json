@@ -1,4 +1,3 @@
-// trnOpDate：日期，staCode：車站代碼 ，gateInComingCnt：入站gateOutGoingCnt：出站
 [
     {
         "trnOpDate": "20190423",
