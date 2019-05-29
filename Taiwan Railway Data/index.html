@@ -4,21 +4,35 @@
 	<meta charset="UTF-8">
 	<title>台灣鐵路各站每月每站進出人數</title>
 	<script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
   crossorigin="anonymous"></script>
-	<script>
-		const data_url = "json/StationIncomeTotail.json"
 
-		var data = loadJSON(data_url);
+  <script>
+    const data_url = "https://raw.githubusercontent.com/Billy6boss/TRW-data/master/Taiwan%20Railway%20Data/json/StationIncomeTotail.json"
 
-		$(data).ready(function () {
-			console.log(data);
-		})
+    $().ready(function(){
+          $.getJSON(data_url,function(data){
+            console.log("Test");
+            console.log(data.length);
+            $.each(data,function(key,val){
+                var $p = $("<p/>");
+                $.each(val,function(key2,val2){
+                    var $p = $("<p/>");
+                    $p.text(key2 + " And " + val2);
+                $("#data").append($p);
+            })
+            })
+        });
+    });
 
-	</script>
+
+
+  </script>
 </head>
 <body>
-	
+	<div id="data">
+
+    </div>
 </body>
 </html>
